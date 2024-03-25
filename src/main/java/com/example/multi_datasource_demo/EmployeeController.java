@@ -20,16 +20,16 @@ import java.util.List;
 @RequestMapping("/employees")
 public class EmployeeController {
 
-    private final EmployeeRepository employeeRepository;
+  private final EmployeeRepository employeeRepository;
 
-    @GetMapping("")
-    public ResponseEntity<List<Employee>> getEmployees() {
-        return ResponseEntity.ok(employeeRepository.findAll());
-    }
+  @GetMapping("")
+  public ResponseEntity<List<Employee>> getEmployees() {
+    return ResponseEntity.ok(employeeRepository.findAll());
+  }
 
-    @PostMapping("")
-    @ResponseStatus(HttpStatus.CREATED)
-    public void registerEmployee(@RequestBody Employee employee) {
-        employeeRepository.save(employee);
-    }
+  @PostMapping("")
+  @ResponseStatus(HttpStatus.CREATED)
+  public void registerEmployee(@RequestBody Employee employee) {
+    employeeRepository.save(employee);
+  }
 }
