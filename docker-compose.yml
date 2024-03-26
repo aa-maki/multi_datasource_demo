@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:16-bookworm
+    ports:
+      - 54321:5432
+    volumes:
+      - ./postgres/sql:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_DB: demo
+      POSTGRES_USER: demo
+      POSTGRES_PASSWORD: demo
+      TZ: "Asia/Tokyo"
+    restart: always

@@ -2,24 +2,7 @@ spring:
   application:
     name: demo
   datasource:
-    # アプリケーション立ち上げ時にデータベースを作成する
-    initialization-mode: always
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-
-app:
-  datasource-list:
-    - hoge
-    - fuga
-
-datasource:
-  hoge:
-    url: jdbc:h2:mem:testdb-hoge
-    driver: org.h2.Driver
-    username: hoge
-    password: hoge
-  fuga:
-    url: jdbc:h2:mem:testdb-fuga
-    driver: org.h2.Driver
-    username: fuga
-    password: fuga
+    url: jdbc:postgresql://localhost:54321/demo
+    driver: org.postgresql.Driver
+    username: demo
+    password: demo
