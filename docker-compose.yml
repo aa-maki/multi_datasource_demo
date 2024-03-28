@@ -1,15 +1,28 @@
 version: '3'
 
 services:
-  db:
+  hoge:
     image: postgres:16-bookworm
     ports:
       - 54321:5432
     volumes:
       - ./postgres/sql:/docker-entrypoint-initdb.d
     environment:
-      POSTGRES_DB: demo
-      POSTGRES_USER: demo
-      POSTGRES_PASSWORD: demo
+      POSTGRES_DB: hoge
+      POSTGRES_USER: hoge
+      POSTGRES_PASSWORD: hoge
+      TZ: "Asia/Tokyo"
+    restart: always
+
+  fuga:
+    image: postgres:16-bookworm
+    ports:
+      - 54322:5432
+    volumes:
+      - ./postgres/sql:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_DB: fuga
+      POSTGRES_USER: fuga
+      POSTGRES_PASSWORD: fuga
       TZ: "Asia/Tokyo"
     restart: always

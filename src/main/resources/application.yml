@@ -1,8 +1,19 @@
 spring:
   application:
     name: demo
-#  datasource:
-#    url: jdbc:postgresql://localhost:54321/demo
-#    driver: org.postgresql.Driver
-#    username: demo
-#    password: demo
+  datasource:
+    hoge:
+      url: jdbc:postgresql://localhost:54321/hoge
+      driver: org.postgresql.Driver
+      username: hoge
+      password: hoge
+    fuga:
+      url: jdbc:postgresql://localhost:54322/fuga
+      driver: org.postgresql.Driver
+      username: fuga
+      password: fuga
+
+app:
+  datasource-list:
+    - hoge
+    - fuga
